@@ -118,8 +118,9 @@ while (True):
                             else:
                                 print("the",update,"were not found in the data base please try again")
                                 break    
-                        if(update in newstudent[ans]):  
-                            print("Erorr 406 | you cannot change the name for",ans,"plaese delete it from the data base then make another one with the new name ")
+                        if (update == "name"):
+                            if(update in newstudent[ans]):  
+                             print("Erorr 406 | you cannot change the name for",ans,"plaese delete it from the data base then make another one with the new name ")
                             
                     else:
                             print(ans,"were not found in the data base please try again")
