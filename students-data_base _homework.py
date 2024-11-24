@@ -77,22 +77,27 @@ while (True):
     
     elif(ans == "del"):
         if newstudent:
-            ans = input("Do you wanna to delete the whole data base or delete a specific user ? (all/student)")
-            if(ans != "all" and ans !="student"):
-                print("Error 404 | Invalid input")
-            if(ans == "all") : 
-                newstudent.clear()
-                print("all students have been deleted !")
-            while(ans == "student"):   
-                print(" which student you wanna delete ? ",newstudent.keys())
-                choice = input().lower()
-                if(choice in newstudent):
-                    del newstudent[choice]
-                    students.remove(choice)
-                    print(choice,"have been deleted !")
+            while (True):
+                ans = input("Do you wanna to delete the whole data base or delete a specific user or back to the main menu  ? (all/student/back)")
+                if(ans != "all" and ans !="student" and ans != "back"):
+                    print("Error 404 | Invalid input")
+                    ans = input("Do you wanna to delete the whole data base or delete a specific user or back to the main menu  ? (all/student/back)")
+                if(ans == "all") : 
+                    newstudent.clear()
+                    print("all students have been deleted !")
                     break
-                else:
-                    print(choice,"were not found in the data base please try again") 
+                while(ans == "student"):   
+                    print(" which student you wanna delete ? ",newstudent.keys())
+                    choice = input().lower()
+                    if(choice in newstudent):
+                        del newstudent[choice]
+                        students.remove(choice)
+                        print(choice,"have been deleted !")
+                        break
+                    else:
+                        print(choice,"were not found in the data base please try again") 
+                if(ans == "back"):
+                    break        
         else:
              print("there is not any registered students yet :(")  
 
@@ -133,4 +138,11 @@ while (True):
       print("See you later ^-^")
       break            
 
-    # this code was written by Abdulaziz Almarshed ^_^
+    """ 
+    this code was written by Abdulaziz Almarshed ^_^
+    
+    
+    edit it at 24 nov | adding in delete a while loop to make sure the user enter a valid input |
+    
+    
+    """
